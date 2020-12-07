@@ -1,36 +1,18 @@
 import React from 'react'
-import Rest from './rest'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Header from './elements/Header'
-import Meses from './Meses'
-import AdicionarMes from './AdicionarMes'
-
-const baseURL = 'https://mymoney-development.firebaseio.com/'
-
-const { useGet, usePost, useDelete } = Rest(baseURL)
+import Home from './pages/Home'
+import Movimentacoes from './pages/Movimentacoes'
 
 function App() {
-  //const data = useGet('movimentacoes/2020-12')
-  const data = useGet('meses')
-  //const [postData, post] = usePost('movimentacoes/2020-10')
-  //const [deleteData, remove] = useDelete()
-
-  const saveNew = () => {
-    //post({ valor: 10, descricao: 'novo' })
-  }
-
-  const doRemove = () => {
-    //remove('movimentacoes/2020-10/-MNjmTf3vLciQ3I7tRwd')
-  }
   return (
-    <div>
-      <Header />
-
-      <div className='container'>
-        
-        <Meses/>
-        <AdicionarMes/>
+    <Router>
+      <div>
+        <Header />
+        <Route path='/' exact component={Home}/>
+        <Route path='/movimentacoes/:data' component={Movimentacoes}/>
       </div>
-    </div>
+    </Router>
   )
 }
 
