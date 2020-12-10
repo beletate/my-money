@@ -4,7 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In this project you are able to register your money services about a specific month. 
 
-Check online: [Click here](https://mymoney-development.web.app/).
+You can do: user@user.com as e-mail and user123 as password!
+[Check online](https://mymoney-development.web.app/).
 
 ## Available Scripts
 
